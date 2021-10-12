@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <section class="content" style="">
+        <div class="content-wrapper">
+        <section class="content">
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
