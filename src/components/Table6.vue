@@ -6,7 +6,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Data Store</h3>
+                <h3 class="card-title">Data Policy</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -14,8 +14,7 @@
                   <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Store Name</th>
-                    <th>Address</th>
+                    <th>Content</th>
                     <th>Action</th>
                   </tr>
                   </thead>
