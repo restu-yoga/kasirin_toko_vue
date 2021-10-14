@@ -35,7 +35,7 @@
                     </div>
                 </form>
                 <p class="mb-0 mt-3">
-                    <a href="register.html" class="text-center">Register a new membership</a>
+                    <router-link to="register" class="text-center">Register a new membership</router-link>
                 </p>
             </div>
             <!-- /.login-card-body -->
