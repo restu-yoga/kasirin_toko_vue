@@ -28,47 +28,47 @@
           <ul class="nav nav-treeview">
             <li class="nav-item">
               <router-link to="store" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-store nav-icon"></i>
                 <p>Store</p>
               </router-link>
             </li>
             <li class="nav-item">
               <router-link to="product" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-boxes nav-icon"></i>
                 <p>Product</p>
               </router-link>
             </li>
             <li class="nav-item">
               <router-link to="category" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-list-ul nav-icon"></i>
                 <p>Category</p>
               </router-link>
             </li>
             <li class="nav-item">
               <router-link to="transaction" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-shopping-cart nav-icon"></i>
                 <p>Transaction</p>
               </router-link>
             </li>
             <li class="nav-item">
               <router-link to="faq" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-comments nav-icon"></i>
                 <p>Faq</p>
               </router-link>
             </li>
             <li class="nav-item">
               <router-link to="contact" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-phone-alt nav-icon"></i>
                 <p>Contact Us</p>
               </router-link>
             </li>
             <li class="nav-item">
               <router-link to="policy" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-book-open nav-icon"></i>
                 <p>Privacy and Policy</p>
               </router-link>
             </li>
-             <li class="nav-item" style="visibility: hidden;">
+             <!-- <li class="nav-item" style="visibility: hidden;">
               <router-link to="hello-world" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Contact Us</p>
@@ -115,7 +115,7 @@
                 <i class="far fa-circle nav-icon"></i>
                 <p>Privacy and Policy</p>
               </router-link>
-            </li>
+            </li> -->
           </ul>
         </li>
         </ul>
