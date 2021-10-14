@@ -1,4 +1,7 @@
 <template>
+<div>
+  <nav-bar></nav-bar>
+  <side-bar></side-bar>
         <div class="content-wrapper">
         <section class="content">
       <div class="container-fluid">
@@ -47,4 +50,20 @@
       <!-- /.container-fluid -->
     </section>
     </div>
+    <foot-bar></foot-bar>
+</div>
 </template>
+
+<script>
+import NavBar from '../layout/Navbar.vue'
+import SideBar from '../layout/Sidebar.vue'
+import FootBar from '../layout/Footbar.vue'
+
+export default {
+  components: {
+    NavBar,
+    SideBar,
+    FootBar
+    }
+}
+</script>
