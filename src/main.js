@@ -4,13 +4,13 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 let routes =[
-  { path: '/table', component:require('./components/Table.vue').default },
-  { path: '/table1', component:require('./components/Table1.vue').default },
-  { path: '/table2', component:require('./components/Table2.vue').default },
-  { path: '/table3', component:require('./components/Table3.vue').default },
-  { path: '/table4', component:require('./components/Table4.vue').default },
-  { path: '/table5', component:require('./components/Table5.vue').default },
-  { path: '/table6', component:require('./components/Table6.vue').default }
+  { path: '/store', component:require('./components/view/Store.vue').default },
+  { path: '/product', component:require('./components/view/Product.vue').default },
+  { path: '/category', component:require('./components/view/Category.vue').default },
+  { path: '/transaction', component:require('./components/view/Transaction.vue').default },
+  { path: '/faq', component:require('./components/view/Faq.vue').default },
+  { path: '/contact', component:require('./components/view/Contact.vue').default },
+  { path: '/policy', component:require('./components/view/Policy.vue').default }
 
 ]
 

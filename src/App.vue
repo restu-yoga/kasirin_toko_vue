@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import NavBar from './components/Navbar.vue'
-import SideBar from './components/Sidebar.vue'
-import FootBar from './components/Footbar.vue'
+import NavBar from './components/layout/Navbar.vue'
+import SideBar from './components/layout/Sidebar.vue'
+import FootBar from './components/layout/Footbar.vue'
 
 export default {
   name: 'App',

@@ -12,7 +12,7 @@
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="/assets/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">Alexander Pierce</a>
@@ -27,43 +27,43 @@
           <li class="nav-item menu-open">
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <router-link to="table" class="nav-link">
+              <router-link to="store" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Store</p>
               </router-link>
             </li>
             <li class="nav-item">
-              <router-link to="table1" class="nav-link">
+              <router-link to="product" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Product</p>
               </router-link>
             </li>
             <li class="nav-item">
-              <router-link to="table2" class="nav-link">
+              <router-link to="category" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Category</p>
               </router-link>
             </li>
             <li class="nav-item">
-              <router-link to="table3" class="nav-link">
+              <router-link to="transaction" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Transaction</p>
               </router-link>
             </li>
             <li class="nav-item">
-              <router-link to="table4" class="nav-link">
+              <router-link to="faq" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Faq</p>
               </router-link>
             </li>
             <li class="nav-item">
-              <router-link to="table5" class="nav-link">
+              <router-link to="contact" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Contact Us</p>
               </router-link>
             </li>
             <li class="nav-item">
-              <router-link to="table6" class="nav-link">
+              <router-link to="policy" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Privacy and Policy</p>
               </router-link>
