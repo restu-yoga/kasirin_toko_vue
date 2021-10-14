@@ -69,59 +69,11 @@
               </router-link>
             </li>
             <li class="nav-item">
-                <router-link to="" class="nav-link">
+                <router-link to="login" class="nav-link">
                   <i class="fas fa-sign-out-alt nav-icon"></i>
                   <p>Log Out</p>
                 </router-link>
               </li>
-            <li class="nav-item" style="visibility: hidden;">
-              <router-link to="hello-world" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Contact Us</p>
-              </router-link>
-            </li>
-            <li class="nav-item" style="visibility: hidden;">
-              <router-link to="table" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Privacy and Policy</p>
-              </router-link>
-            </li>
-             <li class="nav-item" style="visibility: hidden;">
-              <router-link to="hello-world" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Contact Us</p>
-              </router-link>
-            </li>
-            <li class="nav-item" style="visibility: hidden;">
-              <router-link to="table" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Privacy and Policy</p>
-              </router-link>
-            </li>
-             <li class="nav-item" style="visibility: hidden;">
-              <router-link to="hello-world" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Contact Us</p>
-              </router-link>
-            </li>
-            <li class="nav-item" style="visibility: hidden;">
-              <router-link to="table" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Privacy and Policy</p>
-              </router-link>
-            </li>
-             <li class="nav-item" style="visibility: hidden;">
-              <router-link to="hello-world" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Contact Us</p>
-              </router-link>
-            </li>
-            <li class="nav-item" style="visibility: hidden;">
-              <router-link to="table" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Privacy and Policy</p>
-              </router-link>
-            </li> -->
           </ul>
         </li>
         </ul>
