@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 let routes =[
-  { path: '/', component:require('./components/view/Store.vue').default },
+  { path: '/', component:require('./components/view/Home.vue').default },
   { path: '/store', component:require('./components/view/Store.vue').default },
   { path: '/product', component:require('./components/view/Product.vue').default },
   { path: '/category', component:require('./components/view/Category.vue').default },

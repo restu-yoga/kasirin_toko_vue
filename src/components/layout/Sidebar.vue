@@ -25,7 +25,13 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-          <ul class="nav nav-treeview">
+          <ul class="nav nav-treeview" >
+            <li class="nav-item">
+              <router-link to="/" class="nav-link">
+                <i class="fas fa-home nav-icon"></i>
+                <p>Home</p>
+              </router-link>
+            </li>
             <li class="nav-item">
               <router-link to="store" class="nav-link">
                 <i class="fas fa-store nav-icon"></i>

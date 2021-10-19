@@ -15,3 +15,7 @@ $(function () {
       "responsive": true,
     });
   });
+
+  $.widget.bridge('uibutton', $.ui.button)
+
+  
