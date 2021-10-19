@@ -34,6 +34,12 @@
             </li>
             <li class="nav-item">
               <router-link to="store" class="nav-link">
+                <i class="fas fa-user-tie nav-icon"></i>
+                <p>User</p>
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="store" class="nav-link">
                 <i class="fas fa-store nav-icon"></i>
                 <p>Store</p>
               </router-link>

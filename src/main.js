@@ -13,7 +13,8 @@ let routes =[
   { path: '/contact', component:require('./components/view/Contact.vue').default },
   { path: '/policy', component:require('./components/view/Policy.vue').default },
   { path: '/login', component:require('./components/view/Login.vue').default },
-  { path: '/register', component:require('./components/view/Register.vue').default }
+  { path: '/register', component:require('./components/view/Register.vue').default },
+  { path: '/bar', component:require('./components/view/Bar.vue').default }
 ]
 
 const router = new VueRouter({
