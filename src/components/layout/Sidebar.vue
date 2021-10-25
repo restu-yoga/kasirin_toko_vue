@@ -64,24 +64,6 @@
                   </router-link>
                 </li>
                 <li class="nav-item">
-                  <router-link to="faq" class="nav-link">
-                    <i class="fas fa-comments nav-icon"></i>
-                    <p>Faq</p>
-                  </router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link to="contact" class="nav-link">
-                    <i class="fas fa-phone-alt nav-icon"></i>
-                    <p>Contact Us</p>
-                  </router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link to="policy" class="nav-link">
-                    <i class="fas fa-book-open nav-icon"></i>
-                    <p>Privacy and Policy</p>
-                  </router-link>
-                </li>
-                <li class="nav-item">
                   <a class="nav-link" @click="logout">Logout</a>
                 </li>
               </ul>

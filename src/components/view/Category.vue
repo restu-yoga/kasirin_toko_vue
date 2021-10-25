@@ -10,11 +10,6 @@
               <div class="card">
                 <div class="card-header">
                   <h3 class="card-title">Data Category</h3>
-                  <div class="card-tools">
-                    <button type="submit" class="btn btn-success" @click="showModal">
-                      Add Category
-                    </button>
-                  </div>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -27,7 +22,15 @@
                       </tr>
                     </thead>
                     <tbody>
-
+                      <tr v-for="item in categories" :key="item.id">
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.name }}</td>
+                        <td>
+                          <a href="#"><i class="fas fa-edit blue" style="padding-right:10px;"></i></a>
+                          <a href="#" class="text-danger">
+                            <i class="fas fa-trash-alt red"></i></a>
+                        </td>
+                      </tr>
                     </tbody>
                     <!-- <tfoot>
                   <tr>
@@ -48,37 +51,6 @@
           <!-- /.row -->
         </div>
         <!-- /.container-fluid -->
-        <!-- Modal -->
-        <div class="modal fade" id="modalmuncul" tabindex="-1" role="dialog" aria-labelledby="modalmuncul1"
-          aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">
-                  Add Category
-                </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <form>
-                <div class="modal-body">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Category Name" />
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                    Close
-                  </button>
-                  <button type="submit" class="btn btn-primary">
-                    Save
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
       </section>
     </div>
     <foot-bar></foot-bar>
@@ -89,8 +61,7 @@
   import NavBar from '../layout/Navbar.vue'
   import SideBar from '../layout/Sidebar.vue'
   import FootBar from '../layout/Footbar.vue'
-  import $ from "jquery";
-
+  import axios from 'axios'
 
   export default {
     components: {
@@ -98,10 +69,26 @@
       SideBar,
       FootBar
     },
-      methods: {
-        showModal() {
-            $("#modalmuncul").modal("show");
-        },
+    data() {
+      return {
+        categories: {},
       }
+    },
+
+    mounted() {
+      axios
+        .get("https://api-kasirin.jaggs.id/api/category", {
+          headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('access_token')
+
+          }
+        })
+        .then(({
+          data
+        }) => (this.categories = data.data))
+        .catch((err) => {
+          console.log(err)
+        });
+    },
   }
 </script>

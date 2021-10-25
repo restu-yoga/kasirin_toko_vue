@@ -24,19 +24,16 @@
                     </thead>
                     <tbody>
                       <tr v-for="item in stores" :key="item.id">
-                        <td>{{ item.id }}</td>
-                        <td>{{ item.name }}</td>
-                        <td>{{ item.address }}</td>
+                        <td>{{ item.store.id }}</td>
+                        <td>{{ item.store.name }}</td>
+                        <td>{{ item.store.address }}</td>
+                        <td>
+                          <a href="#"><i class="fas fa-edit blue" style="padding-right:10px;"></i></a>
+                          <a href="#" class="text-danger">
+                            <i class="fas fa-trash-alt red"></i></a>
+                        </td>
                       </tr>
                     </tbody>
-                    <!-- <tfoot>
-                  <tr>
-                   <th>ID</th>
-                    <th>Store Name</th>
-                    <th>Address</th>
-                    <th>Action</th>
-                  </tr>
-                  </tfoot> -->
                   </table>
                 </div>
                 <!-- /.card-body -->
@@ -72,20 +69,20 @@
       }
     },
 
-  mounted() {
+    mounted() {
       axios
-          .get("https://api-kasirin.jaggs.id/api/stores",{
-            headers: {
-              Authorization: 'Bearer ' + localStorage.getItem('access_token')
-              
-            }
-          } )
-          .then(({
-            data
-          }) => (this.stores = data.data))
-          .catch((err) => {
-            console.log(err)
-          });
-  },
+        .get("https://api-kasirin.jaggs.id/api/user-stores?user_id=" + localStorage.getItem('id'), {
+          headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('access_token')
+
+          }
+        })
+        .then(({
+          data
+        }) => (this.stores = data.data))
+        .catch((err) => {
+          console.log(err)
+        });
+    },
   }
 </script>
