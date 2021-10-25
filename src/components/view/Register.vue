@@ -114,7 +114,7 @@
       formData.set("avatar", this.form.avatar);
       formData.set("password", this.form.password);
       axios
-        .post("http://127.0.0.1:8000/api/register", formData)
+        .post("https://api-kasirin.jaggs.id/api/register", formData)
         .then((response) => {
          console.log(response);
          this.$router.push({
