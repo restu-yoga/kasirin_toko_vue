@@ -25,11 +25,11 @@ Vue.use(VueRouter)
 
 let routes =[
   { path: '/home', name: 'Home', component:require('./components/view/Home.vue').default },
-  { path: '/store', component:require('./components/view/Store.vue').default },
+  { path: '/store',name: 'Store' , component:require('./components/view/Store.vue').default },
   { path: '/product', component:require('./components/view/Product.vue').default },
   { path: '/category', name:'category' , component:require('./components/view/Category.vue').default },
   { path: '/transaction', component:require('./components/view/Transaction.vue').default },
-  { path: '/faq', component:require('./components/view/Faq.vue').default },
+  { path: '/addstore', component:require('./components/view/AddStore.vue').default },
   { path: '/addproduct', component:require('./components/view/AddProduct.vue').default },
   { path: '/addcategory', component:require('./components/view/AddCategory.vue').default },
   { path: '/', name: 'Login', component:require('./components/view/Login.vue').default },

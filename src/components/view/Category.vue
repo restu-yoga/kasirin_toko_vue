@@ -59,11 +59,22 @@
   import "datatables.net-dt/js/dataTables.dataTables"
   import "datatables.net-dt/css/jquery.dataTables.min.css"
   import $ from 'jquery';
+   import {
+    mapGetters
+  } from 'vuex'
+
+
   export default {
     components: {
       NavBar,
       SideBar,
       FootBar
+    },
+     computed: {
+      ...mapGetters({
+        isLoggedIn: 'isLoggedIn',
+        user: 'user',
+      })
     },
     data() {
       return {
