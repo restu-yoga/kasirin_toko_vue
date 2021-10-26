@@ -76,7 +76,6 @@
         .get("https://api-kasirin.jaggs.id/api/category", {
           headers: {
             Authorization: 'Bearer ' + localStorage.getItem('access_token')
-
           }
         })
         .then(({

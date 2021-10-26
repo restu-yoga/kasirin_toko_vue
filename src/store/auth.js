@@ -42,8 +42,10 @@ export default {
                     .then(response => {
                         const token = response.data.access_token
                         const id = response.data.data.id
+                        const store_id = response.data.data.user_store.store_id
                         localStorage.setItem('access_token', token)
                         localStorage.setItem('id', id)
+                        localStorage.setItem('store_id', store_id)
                         setHeaderToken(token)
                         dispatch('get_user')
                         resolve(response)
@@ -69,6 +71,7 @@ export default {
                 removeHeaderToken()
                 localStorage.removeItem('access_token')
                 localStorage.removeItem('id')
+                localStorage.removeItem('store_id')
                 return error
             }
         },
@@ -77,22 +80,10 @@ export default {
              commit('reset_user')
              localStorage.removeItem('access_token')
              localStorage.removeItem('id')
+             localStorage.removeItem('store_id')
              removeHeaderToken()
              resolve()
             })
            },
-        //    register({ commit }, data) {
-        //     return new Promise((resolve, reject) => { 
-        //      axios.post('register', data)
-        //       .then(resp => { 
-        //        resolve(resp)
-        //       })
-        //       .catch(err => {
-        //        commit('reset_user')   
-        //        reject(err)
-        //       })
-        //     })
-        //    },
-    }
-
+        }
 }

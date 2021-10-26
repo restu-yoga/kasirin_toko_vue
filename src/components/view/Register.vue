@@ -53,7 +53,7 @@
                 </div>
               </div>
             </div>
-             <div class="form-group">
+             <div class="input-group">
                   <input
                     type="file"
                     accept="avatar/*"
@@ -61,7 +61,7 @@
                     @change="onImageSelected"
                   />
                 </div>
-             <div class="form-group">
+             <div class="form-group mt-2">
               <input type="radio" style="margin-right:5px;" id="male" v-model="form.gender" value="male">
               <label for="male">Male</label><br>
               <input type="radio" style="margin-right:5px;" id="female" v-model="form.gender" value="female">

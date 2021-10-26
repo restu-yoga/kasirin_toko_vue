@@ -27,11 +27,11 @@ let routes =[
   { path: '/home', name: 'Home', component:require('./components/view/Home.vue').default },
   { path: '/store', component:require('./components/view/Store.vue').default },
   { path: '/product', component:require('./components/view/Product.vue').default },
-  { path: '/category', component:require('./components/view/Category.vue').default },
+  { path: '/category', name:'category' , component:require('./components/view/Category.vue').default },
   { path: '/transaction', component:require('./components/view/Transaction.vue').default },
   { path: '/faq', component:require('./components/view/Faq.vue').default },
-  { path: '/contact', component:require('./components/view/Contact.vue').default },
-  { path: '/policy', component:require('./components/view/Policy.vue').default },
+  { path: '/addproduct', component:require('./components/view/AddProduct.vue').default },
+  { path: '/addcategory', component:require('./components/view/AddCategory.vue').default },
   { path: '/', name: 'Login', component:require('./components/view/Login.vue').default },
   { path: '/register', component:require('./components/view/Register.vue').default }
 ]
