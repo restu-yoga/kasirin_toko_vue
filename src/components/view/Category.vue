@@ -13,7 +13,7 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                  <table id="example1" class="table table-bordered table-striped">
+                  <table id="datatable" class="table table-bordered table-striped">
                     <thead>
                       <tr>
                         <th>ID</th>
@@ -32,14 +32,6 @@
                         </td>
                       </tr>
                     </tbody>
-                    <!-- <tfoot>
-                  <tr>
-                   <th>ID</th>
-                    <th>Store Name</th>
-                    <th>Address</th>
-                    <th>Action</th>
-                  </tr>
-                  </tfoot> -->
                   </table>
                 </div>
                 <!-- /.card-body -->
@@ -62,7 +54,11 @@
   import SideBar from '../layout/Sidebar.vue'
   import FootBar from '../layout/Footbar.vue'
   import axios from 'axios'
-
+  import 'jquery/dist/jquery.min.js';
+  import 'bootstrap/dist/css/bootstrap.min.css';
+  import "datatables.net-dt/js/dataTables.dataTables"
+  import "datatables.net-dt/css/jquery.dataTables.min.css"
+  import $ from 'jquery';
   export default {
     components: {
       NavBar,
@@ -85,7 +81,22 @@
         })
         .then(({
           data
-        }) => (this.categories = data.data))
+        }) => {
+          this.categories = data.data;
+            $(function () {
+            $('#datatable').DataTable({
+              language: {
+                info: "",
+                paginate: {
+                  first: "first",
+                  previous: "<i class='fa fa-chevron-left'></i>",
+                  next: "<i class='fa fa-chevron-right'></i>",
+                  last: "last"
+                }
+              }
+            })
+          })
+        })
         .catch((err) => {
           console.log(err)
         });
