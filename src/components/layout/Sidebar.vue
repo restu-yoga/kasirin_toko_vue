@@ -47,7 +47,7 @@
                     <p>Store</p>
                   </router-link>
                 </li>
-                 <li class="nav-item">
+                <li class="nav-item">
                   <router-link to="addstore" class="nav-link">
                     <i class="fas fa-store nav-icon"></i>
                     <p>Add Store</p>
@@ -60,21 +60,9 @@
                   </router-link>
                 </li>
                 <li class="nav-item">
-                  <router-link to="addproduct" class="nav-link">
-                    <i class="fas fa-boxes nav-icon"></i>
-                    <p>Add Product</p>
-                  </router-link>
-                </li>
-                <li class="nav-item">
                   <router-link to="category" class="nav-link">
                     <i class="fas fa-list-ul nav-icon"></i>
                     <p>Category</p>
-                  </router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link to="addcategory" class="nav-link">
-                    <i class="fas fa-list-ul nav-icon"></i>
-                    <p>Add Category</p>
                   </router-link>
                 </li>
                 <li class="nav-item">

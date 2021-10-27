@@ -14,7 +14,7 @@
                     <input type="text" class="form-control" v-model="form.name" id="name" placeholder="Enter name">
                   </div>
                   <div class="form-group">
-                    <label for="address">Store Name</label>
+                    <label for="address">Address</label>
                     <input type="text" class="form-control" v-model="form.address" id="address" placeholder="Enter address">
                   </div>
                 </div>
@@ -54,7 +54,8 @@ export default {
         errors: null,
         form: {
           name: "",
-          address: ""
+          address: "",
+          user_id: localStorage.getItem('id'),
         }
       };
 },
@@ -62,7 +63,8 @@ export default {
       storeForm() {
       let formData = new FormData();
       formData.set("name", this.form.name);
-      formData.set("name", this.form.address);
+      formData.set("address", this.form.address);
+      formData.set("user_id", this.form.user_id);
       axios
         .post("https://api-kasirin.jaggs.id/api/stores", formData)
         .then((response) => {

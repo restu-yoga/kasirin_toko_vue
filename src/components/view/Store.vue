@@ -29,7 +29,7 @@
                         <td>{{ item.store.address }}</td>
                         <td>
                           <a href="#"><i class="fas fa-edit blue" style="padding-right:10px;"></i></a>
-                          <a href="#" class="text-danger">
+                          <a href="#"  @click="deleteData(item.store.id)" class="text-danger">
                             <i class="fas fa-trash-alt red"></i></a>
                         </td>
                       </tr>
@@ -71,23 +71,58 @@
     },
     data() {
       return {
-        stores: {},
+        stores: {
+          id: "",
+          name: "",
+          address: ""
+        },
+      }
+    },
+
+    methods: {
+      load() {
+        axios
+          .get("https://api-kasirin.jaggs.id/api/user-stores?user_id=" + localStorage.getItem('id'), {
+            headers: {
+              Authorization: 'Bearer ' + localStorage.getItem('access_token')
+
+            }
+          })
+          .then(({
+            data
+          }) => {
+          this.stores = data.data;
+           
+        })
+          .catch((err) => {
+            console.log(err)
+          });
+      },
+      deleteData(id) {
+        axios.delete('https://api-kasirin.jaggs.id/api/stores/' + id)
+        .then(res => {
+          this.load()
+          console.log(res);
+        })
+        .catch((err) => {
+        console.log(err)
+        });
       }
     },
 
     mounted() {
-      axios
-        .get("https://api-kasirin.jaggs.id/api/user-stores?user_id=" + localStorage.getItem('id'), {
-          headers: {
-            Authorization: 'Bearer ' + localStorage.getItem('access_token')
+      this.load( axios
+          .get("https://api-kasirin.jaggs.id/api/user-stores?user_id=" + localStorage.getItem('id'), {
+            headers: {
+              Authorization: 'Bearer ' + localStorage.getItem('access_token')
 
-          }
-        })
-        .then(({
-          data
-        }) => {
+            }
+          })
+          .then(({
+            data
+          }) => {
           this.stores = data.data;
-           $(function () {
+            $(function () {
             $('#datatable').DataTable({
               language: {
                 info: "",
@@ -100,10 +135,10 @@
               }
             })
           })
-    })
-        .catch((err) => {
-          console.log(err)
-        });
+        })
+          .catch((err) => {
+            console.log(err)
+          }));
     },
   }
 </script>
