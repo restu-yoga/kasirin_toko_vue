@@ -31,13 +31,15 @@
                         <td>{{ item.id }}</td>
                         <td>{{ item.name }}</td>
                         <td>{{ item.category_id }}</td>
-                        <td> <img :src="item.image_url" style="width:100px; display: block; margin-left: auto; margin-right: auto;" alt="Product Image"></td>
-                        <td>{{ item.price }}</td>
-                        <td>{{ item.stock }}</td>
+                        <td> <img :src="item.image_url"
+                            style="width:100px; display: block; margin-left: auto; margin-right: auto;"
+                            alt="Product Image"></td>
+                        <td>Rp.{{ item.price }}</td>
+                        <td>{{ item.stock }} buah</td>
                         <td>{{ item.barcode }}</td>
                         <td>
                           <a href="#"><i class="fas fa-edit blue" style="padding-right:10px;"></i></a>
-                          <a href="#" class="text-danger">
+                           <a href="#" @click="deleteData(item.id)" class="text-danger">
                             <i class="fas fa-trash-alt red"></i></a>
                         </td>
                       </tr>
@@ -69,6 +71,7 @@
   import "datatables.net-dt/js/dataTables.dataTables"
   import "datatables.net-dt/css/jquery.dataTables.min.css"
   import $ from 'jquery';
+  import Swal from 'sweetalert2';
 
   export default {
     components: {
@@ -82,8 +85,68 @@
       }
     },
 
+  methods: {
+    load(){
+     axios
+        .get("https://api-kasirin.jaggs.id/api/product", {
+          headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('access_token')
+
+          }
+        })
+        .then(({
+          data
+        }) => {
+          this.products = data.data;
+        })
+        .catch((err) => {
+          console.log(err)
+        });
+    },
+     deleteData(id) {
+        Swal.fire({
+          title: "Anda Yakin Ingin Menghapus Data Ini ?",
+          text: "Klik Batal untuk Membatalkan Penghapusan",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          cancelButtonText: "Batal",
+          confirmButtonText: "Hapus"
+        }).then(result => {
+          if (result.value) {
+            axios.delete('https://api-kasirin.jaggs.id/api/product/delete/' + id)
+              .then(res => {
+                Swal.fire(
+                  "Terhapus",
+                  "Produk Anda Sudah Terhapus",
+                  "success"
+                );
+                this.load();
+                console.log(res);
+              })
+              .catch((err) => {
+                Swal.fire(
+                  "Gagal",
+                  "Produk Anda Gagal Terhapus",
+                  "warning"
+                );
+                console.log(err)
+              })
+          } else {
+            Swal.fire(
+              "Gagal",
+              "Produk Anda Gagal Terhapus",
+              "warning"
+            );
+          }
+        })
+      }
+  },
+
     mounted() {
-      axios
+    this.load(
+       axios
         .get("https://api-kasirin.jaggs.id/api/product", {
           headers: {
             Authorization: 'Bearer ' + localStorage.getItem('access_token')
@@ -110,7 +173,8 @@
         })
         .catch((err) => {
           console.log(err)
-        });
+        })
+    )
     },
   }
 </script>

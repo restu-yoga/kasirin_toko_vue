@@ -48,12 +48,6 @@
                   </router-link>
                 </li>
                 <li class="nav-item">
-                  <router-link to="addstore" class="nav-link">
-                    <i class="fas fa-store nav-icon"></i>
-                    <p>Add Store</p>
-                  </router-link>
-                </li>
-                <li class="nav-item">
                   <router-link to="product" class="nav-link">
                     <i class="fas fa-boxes nav-icon"></i>
                     <p>Product</p>
