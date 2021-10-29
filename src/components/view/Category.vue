@@ -10,6 +10,13 @@
               <div class="card">
                 <div class="card-header">
                   <h3 class="card-title">Data Category</h3>
+                  <router-link to="addcategory" class="card-tools"> 
+                    <button
+                        class="btn btn-success"
+                    >
+                        Add Category
+                    </button>
+                </router-link>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -27,7 +34,7 @@
                         <td>{{ item.name }}</td>
                         <td>
                           <a href="#"><i class="fas fa-edit blue" style="padding-right:10px;"></i></a>
-                          <a href="#" class="text-danger">
+                           <a href="#" @click="deleteData(item.id)" class="text-danger">
                             <i class="fas fa-trash-alt red"></i></a>
                         </td>
                       </tr>
@@ -59,9 +66,7 @@
   import "datatables.net-dt/js/dataTables.dataTables"
   import "datatables.net-dt/css/jquery.dataTables.min.css"
   import $ from 'jquery';
-   import {
-    mapGetters
-  } from 'vuex'
+  import Swal from 'sweetalert2';
 
 
   export default {
@@ -69,12 +74,6 @@
       NavBar,
       SideBar,
       FootBar
-    },
-     computed: {
-      ...mapGetters({
-        isLoggedIn: 'isLoggedIn',
-        user: 'user',
-      })
     },
     data() {
       return {
@@ -85,6 +84,64 @@
   methods: {
      load(){
          axios
+        .get("https://api-kasirin.jaggs.id/api/category?store_id=1", {
+          headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('access_token')
+          }
+        })
+        .then(({
+          data
+        }) => {
+          this.categories = data.data;
+        })
+        .catch((err) => {
+          console.log(err)
+        });
+    },
+     deleteData(id) {
+        Swal.fire({
+          title: "Anda Yakin Ingin Menghapus Data Ini ?",
+          text: "Klik Batal untuk Membatalkan Penghapusan",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          cancelButtonText: "Batal",
+          confirmButtonText: "Hapus"
+        }).then(result => {
+          if (result.value) {
+            axios.delete('https://api-kasirin.jaggs.id/api/category/delete/' + id)
+              .then(res => {
+                Swal.fire(
+                  "Terhapus",
+                  "Kategori Anda Sudah Terhapus",
+                  "success"
+                );
+                this.load();
+                console.log(res);
+              })
+              .catch((err) => {
+                Swal.fire(
+                  "Gagal",
+                  "Kategori Anda Gagal Terhapus",
+                  "warning"
+                );
+                console.log(err)
+              })
+          } else {
+            Swal.fire(
+              "Gagal",
+              "Kategori Anda Gagal Terhapus",
+              "warning"
+            );
+          }
+        })
+      }
+  },
+
+    mounted() {
+     this.load(
+       axios
         .get("https://api-kasirin.jaggs.id/api/category?store_id=1", {
           headers: {
             Authorization: 'Bearer ' + localStorage.getItem('access_token')
@@ -110,12 +167,8 @@
         })
         .catch((err) => {
           console.log(err)
-        });
-    },
-  },
-
-    mounted() {
-     this.load()
-    },
+        })
+     )
+    }
   }
 </script>

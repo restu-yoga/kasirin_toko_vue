@@ -52,7 +52,7 @@ let routes = [{
   },
   {
     path: '/category',
-    name: 'category',
+    name: 'Category',
     component: require('./components/view/Category.vue').default
   },
   {
